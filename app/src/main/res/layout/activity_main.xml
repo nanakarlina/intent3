@@ -10,8 +10,25 @@
     tools:context="id.sch.smktelkom_mlg.learn.intent3.MainActivity"
     android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/imageViewPhone"
+        android:src="@drawable/ic_phone_black_24dp" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/imageViewSMS"
+        android:src="@drawable/ic_message_black_24dp" />
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/imageViewBrowser"
+        android:src="@drawable/ic_language_black_24dp" />
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/imageViewCamera"
+        android:src="@drawable/ic_photo_camera_black_24dp" />
 </LinearLayout>
