@@ -13,6 +13,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        findViewById(R.id.imageViewBrowser).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openWebpage("http://ww.smktelkom-mlg.sch.id");
+            }
+        });
+
         findViewById(R.id.imageViewSMS).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -26,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
                 dialPhoneNumber("0341712500");
             }
         });
+    }
+
+    private void openWebpage(String url) {
+        Uri webpage = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+        if (intent.resolveActivity(getPackageManager())!= null)
+            startActivity(intent);
     }
 
     private void composeSmsMessage(String messege) {
