@@ -13,12 +13,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        findViewById(R.id.imageViewSMS).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                composeSmsMessage("pesan dari smk telkom malang");
+            }
+        });
+
         findViewById(R.id.imageViewPhone).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialPhoneNumber("0341712500");
             }
         });
+    }
+
+    private void composeSmsMessage(String messege) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("test/plain");
+        intent.putExtra("sms_body",messege);
+        if (intent.resolveActivity(getPackageManager())!= null)
+            startActivity(intent);
     }
 
     private void dialPhoneNumber(String phoneNumber) {
